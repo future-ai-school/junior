@@ -15,11 +15,18 @@
 ## 📂 フォルダの使い方（例）
 
 ```
-/taro/ # たろうさんの作品
-├─ lesson1/ # レッスン1で作ったプログラム
-├─ lesson2/
-/hanako/ # はなこさんの作品
-├─ lesson1/
-└─ lesson2/
-/common/ # みんなで使うサンプルや教材
+├── .gitignore
+├── README.md
+├── package.json # Next.jsフロント依存
+├── next.config.js
+├── tsconfig.json
+├── requirements.txt # FastAPI依存
+├── vercel.json # Vercelデプロイ設定
+│
+├── bob/ # Bob用
+│ ├── page.tsx # Bob専用フロントページ
+│ └── api/
+│ └── route.py # Bob専用FastAPIエンドポイント
+│
+└── public/ # 静的ファイル（画像、faviconなど）
 ```
