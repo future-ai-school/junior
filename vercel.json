@@ -1,17 +1,17 @@
 {
   "functions": {
-    "app/bob/api/route.py": {
+    "api/*.py": {
       "runtime": "@vercel/python"
     }
   },
   "routes": [
     {
-      "src": "/bob/api/route",
-      "dest": "/app/bob/api/route.py"
+      "src": "/(.+)/api",
+      "dest": "/api/$1.py"
     },
     {
-      "src": "/bob",
-      "dest": "/app/bob/page"
+      "src": "/(.+)",
+      "dest": "/app/$1/page"
     }
   ]
 }
