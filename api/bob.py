@@ -1,18 +1,10 @@
-import json
+# api/bob.py
 
-def handler(request):
-    try:
-        body = json.loads(request.body)
-        user_message = body.get("message", "")
-        reply = f"Bob先生: {user_message} 🌟（テスト応答）"
-        return {
-            "statusCode": 200,
-            "headers": {"Content-Type": "application/json"},
-            "body": json.dumps({"reply": reply}),
-        }
-    except Exception as e:
-        return {
-            "statusCode": 500,
-            "headers": {"Content-Type": "application/json"},
-            "body": json.dumps({"error": str(e)})
-        }
+def handle(message: str) -> str:
+    """
+    Bob用のテスト関数。
+    message を受け取り、少し加工して返すだけのサンプル。
+    """
+    # 適当に文字列を加工
+    reply = f"Bobからの返答: {message[::-1]}"  # 文字列を逆にして返す例
+    return reply
