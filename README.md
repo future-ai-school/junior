@@ -23,7 +23,7 @@
 ├── requirements.txt # FastAPI依存
 ├── vercel.json # Vercelデプロイ設定
 │
-├── bob/ # Bob用
+├── app/bob/ # Bob用
 │ ├── page.tsx # Bob専用フロントページ
 │ └── api/
 │ └── route.py # Bob専用FastAPIエンドポイント
