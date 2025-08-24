@@ -1,22 +1,17 @@
 {
-  "builds": [
-    {
-      "src": "bob/api/route.py",
-      "use": "@vercel/python"
-    },
-    {
-      "src": "next.config.js",
-      "use": "@vercel/next"
+  "functions": {
+    "app/bob/api/route.py": {
+      "runtime": "python3.11"
     }
-  ],
+  },
   "routes": [
     {
-      "src": "/bob",
-      "dest": "/bob/page.tsx"
+      "src": "/bob/api/route",
+      "dest": "/app/bob/api/route.py"
     },
     {
-      "src": "/bob/api/route",
-      "dest": "/bob/api/route.py"
+      "src": "/bob",
+      "dest": "/app/bob/page"
     }
   ]
 }
